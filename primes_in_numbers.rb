@@ -56,24 +56,41 @@ arr = []
             arr << num
             #print "#{num}**#{n}"
         end
+       
     end
+     if n > 2
+      arr << n
+     end
     #print arr 
    new_arr = arr.uniq.map{|t| [t,arr.count(t)]}.to_h
    #print new_arr
+   string = ""
    new_arr.each do |key, value|
     if value == 1
-        print "(#{key})"
+        string = string + "(#{key})"
     else
-        print "(#{key}**#{value})"
+        string = string + "(#{key}**#{value})"
     end
    end
+   puts string
 end
+
+ # string = ""
+  # arr.uniq.map{|t| [t,arr.count(t)]}.to_h.each do |key, value|
+  
+   # if value == 1
+ #         string = string + "(#{key})"
+    #else
+  #       string = string + "(#{key}**#{value})"
+    #end
+   #end
+   #return string 
 
 #arr = arr.group_by(&:itself) # {1=>[1], 2=>[2, 2], 3=>[3, 3, 3], 4=>[4]}
 #arr = arr.map { |k,v| [k, v.count] } # [[1, 1], [2, 2], [3, 3], [4, 1]]
 #arr = arr.to_h
 
-primeFactors(86240)
+primeFactors(600)
 =begin
 # A function to print all prime factors of  
 # a given number n 
